@@ -23,6 +23,7 @@ class LoginVC: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
     }
     @IBAction func signupBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_CREATE_ACOUNT, sender: nil)
     }
     
     

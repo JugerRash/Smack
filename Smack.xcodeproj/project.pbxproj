@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4F27CD259FC7F89ABAEFB079 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69F584C3213F180B4BDCC34 /* Pods_Smack.framework */; };
+		8029F4BC22C23DC70086E0D2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029F4BB22C23DC70086E0D2 /* AuthService.swift */; };
 		803FA70922BA2F8600026D80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803FA70822BA2F8600026D80 /* AppDelegate.swift */; };
 		803FA70E22BA2F8700026D80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803FA70C22BA2F8700026D80 /* Main.storyboard */; };
 		803FA71022BA2F9D00026D80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803FA70F22BA2F9D00026D80 /* Assets.xcassets */; };
 		803FA71322BA2F9D00026D80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803FA71122BA2F9D00026D80 /* LaunchScreen.storyboard */; };
 		807AC4F722BCBA44008EEB30 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4F622BCBA44008EEB30 /* Contants.swift */; };
 		807AC4FA22BCC0CF008EEB30 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4F922BCC0CF008EEB30 /* LoginVC.swift */; };
+		807AC4FC22BCD361008EEB30 /* CreateAcountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC4FB22BCD361008EEB30 /* CreateAcountVC.swift */; };
 		80F222CF22BB7A9E007713FE /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F222CE22BB7A9E007713FE /* ChatVC.swift */; };
 		80F222D122BB7ABB007713FE /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F222D022BB7ABB007713FE /* ChannelVC.swift */; };
 		80F222DE22BB8373007713FE /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F222DC22BB8372007713FE /* SWRevealViewController.m */; };
@@ -21,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8029F4BB22C23DC70086E0D2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		803FA70522BA2F8600026D80 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		803FA70822BA2F8600026D80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		803FA70D22BA2F8700026D80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		803FA71422BA2F9D00026D80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		807AC4F622BCBA44008EEB30 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		807AC4F922BCC0CF008EEB30 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		807AC4FB22BCD361008EEB30 /* CreateAcountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAcountVC.swift; sourceTree = "<group>"; };
 		80F222CE22BB7A9E007713FE /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		80F222D022BB7ABB007713FE /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		80F222DB22BB8371007713FE /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8029F4BA22C23D940086E0D2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8029F4BB22C23DC70086E0D2 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		803FA6FC22BA2F8600026D80 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		803FA70722BA2F8600026D80 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				8029F4BA22C23D940086E0D2 /* Services */,
 				807AC4F522BCBA02008EEB30 /* Utilities */,
 				80F222DA22BB8341007713FE /* Supporting Files */,
 				80F222CD22BB7935007713FE /* Model */,
@@ -118,6 +131,7 @@
 				80F222CE22BB7A9E007713FE /* ChatVC.swift */,
 				80F222D022BB7ABB007713FE /* ChannelVC.swift */,
 				807AC4F922BCC0CF008EEB30 /* LoginVC.swift */,
+				807AC4FB22BCD361008EEB30 /* CreateAcountVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,9 +284,11 @@
 				80F222D122BB7ABB007713FE /* ChannelVC.swift in Sources */,
 				80F222CF22BB7A9E007713FE /* ChatVC.swift in Sources */,
 				807AC4FA22BCC0CF008EEB30 /* LoginVC.swift in Sources */,
+				8029F4BC22C23DC70086E0D2 /* AuthService.swift in Sources */,
 				80F222E022BB8EE1007713FE /* GradientView.swift in Sources */,
 				803FA70922BA2F8600026D80 /* AppDelegate.swift in Sources */,
 				80F222DE22BB8373007713FE /* SWRevealViewController.m in Sources */,
+				807AC4FC22BCD361008EEB30 /* CreateAcountVC.swift in Sources */,
 				807AC4F722BCBA44008EEB30 /* Contants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
