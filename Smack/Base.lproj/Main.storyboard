@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -142,7 +142,7 @@
                                     <action selector="closeBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="o33-Fr-bYu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-zp-YRT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-zp-YRT" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="294" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -152,6 +152,11 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="aJc-ek-Fyh"/>
                                 </connections>
@@ -264,7 +269,7 @@
                                     <action selector="closeBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="M9g-KT-RSD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-KG-Qf4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVp-KG-Qf4" customClass="RoundedButton" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="62.5" y="597" width="250" height="50"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -274,6 +279,11 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="bAn-L0-WYr"/>
                                     <action selector="signupBtnPressed:" destination="KAQ-2F-GHM" eventType="touchUpInside" id="rd2-iS-mHQ"/>
@@ -341,6 +351,13 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6tf-w8-l50">
+                                <rect key="frame" x="142.5" y="325.5" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="3mq-Ws-5VV"/>
+                                    <constraint firstAttribute="width" constant="90" id="ZnC-GZ-Juv"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSC-Hy-NVN">
                                 <rect key="frame" x="142.5" y="325.5" width="90" height="120"/>
                                 <constraints>
@@ -351,16 +368,10 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="pickAvatarPressed:" destination="KAQ-2F-GHM" eventType="touchUpInside" id="JS0-nM-Hc6"/>
                                     <action selector="signupBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="hH5-OB-lxU"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6tf-w8-l50">
-                                <rect key="frame" x="142.5" y="325.5" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="3mq-Ws-5VV"/>
-                                    <constraint firstAttribute="width" constant="90" id="ZnC-GZ-Juv"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8J-XX-3aF">
                                 <rect key="frame" x="110" y="455.5" width="155" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -368,6 +379,7 @@
                                     <color key="titleColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="pickBGColorPressed:" destination="KAQ-2F-GHM" eventType="touchUpInside" id="MUi-8X-UPC"/>
                                     <action selector="signupBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="vmC-Kh-fSl"/>
                                 </connections>
                             </button>
@@ -393,6 +405,10 @@
                         <viewLayoutGuide key="safeArea" id="CUy-LW-3gi"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="NGH-4a-8bk" id="W5s-1D-M3S"/>
+                        <outlet property="passTxt" destination="Gez-HL-rFS" id="Kty-Ve-TKo"/>
+                        <outlet property="userImg" destination="6tf-w8-l50" id="S2O-D5-Wgr"/>
+                        <outlet property="usernameTxt" destination="Gqm-s5-cW0" id="hOh-f7-N2V"/>
                         <segue destination="cPf-DP-O7M" kind="unwind" identifier="unwindToChannel" unwindAction="perpareForUnwindWithSegue:" id="tcC-0P-U3y"/>
                     </connections>
                 </viewController>

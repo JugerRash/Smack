@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F27CD259FC7F89ABAEFB079 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69F584C3213F180B4BDCC34 /* Pods_Smack.framework */; };
+		8020B42E22C3505F009E9CF1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020B42D22C3505F009E9CF1 /* RoundedButton.swift */; };
 		8029F4BC22C23DC70086E0D2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8029F4BB22C23DC70086E0D2 /* AuthService.swift */; };
 		803FA70922BA2F8600026D80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803FA70822BA2F8600026D80 /* AppDelegate.swift */; };
 		803FA70E22BA2F8700026D80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 803FA70C22BA2F8700026D80 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8020B42D22C3505F009E9CF1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		8029F4BB22C23DC70086E0D2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		803FA70522BA2F8600026D80 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		803FA70822BA2F8600026D80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				80F222DF22BB8EE1007713FE /* GradientView.swift */,
+				8020B42D22C3505F009E9CF1 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F222D122BB7ABB007713FE /* ChannelVC.swift in Sources */,
+				8020B42E22C3505F009E9CF1 /* RoundedButton.swift in Sources */,
 				80F222CF22BB7A9E007713FE /* ChatVC.swift in Sources */,
 				807AC4FA22BCC0CF008EEB30 /* LoginVC.swift in Sources */,
 				8029F4BC22C23DC70086E0D2 /* AuthService.swift in Sources */,
