@@ -17,6 +17,7 @@ class AvatarPickerVC: UIViewController {
     
     // Variables -:
     var avatarType : AvatarType = .dark
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

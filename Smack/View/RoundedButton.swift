@@ -23,6 +23,7 @@ class RoundedButton: UIButton {
     }
     
     override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         self.setupView()
     }
     

@@ -47,7 +47,7 @@
                                     <action selector="loginBtnPressed:" destination="hTp-1p-MtV" eventType="touchUpInside" id="ID6-c5-Kyw"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2r9-BW-43F">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2r9-BW-43F" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="20" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="4s3-Hc-4bS"/>
@@ -351,7 +351,7 @@
                                 <color key="textColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6tf-w8-l50">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6tf-w8-l50" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="142.5" y="325.5" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="3mq-Ws-5VV"/>
@@ -383,6 +383,10 @@
                                     <action selector="signupBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="vmC-Kh-fSl"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TlK-VT-R1U">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.32549019607843138" green="0.41960784313725491" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -395,7 +399,9 @@
                             <constraint firstItem="CUy-LW-3gi" firstAttribute="trailing" secondItem="oo9-SO-0s4" secondAttribute="trailing" constant="20" id="InI-LL-4NZ"/>
                             <constraint firstItem="gsm-h1-JJb" firstAttribute="centerX" secondItem="umi-Ct-sBD" secondAttribute="centerX" id="SJV-Ny-6Ci"/>
                             <constraint firstItem="cVp-KG-Qf4" firstAttribute="centerX" secondItem="umi-Ct-sBD" secondAttribute="centerX" id="cOv-F3-JXh"/>
+                            <constraint firstItem="TlK-VT-R1U" firstAttribute="centerY" secondItem="umi-Ct-sBD" secondAttribute="centerY" constant="-100" id="fw6-eu-D17"/>
                             <constraint firstItem="z8J-XX-3aF" firstAttribute="top" secondItem="oSC-Hy-NVN" secondAttribute="bottom" constant="10" id="hEk-2U-b0p"/>
+                            <constraint firstItem="TlK-VT-R1U" firstAttribute="centerX" secondItem="umi-Ct-sBD" secondAttribute="centerX" id="l9t-l1-62C"/>
                             <constraint firstItem="6tf-w8-l50" firstAttribute="centerX" secondItem="umi-Ct-sBD" secondAttribute="centerX" id="ohx-YR-nRw"/>
                             <constraint firstItem="oSC-Hy-NVN" firstAttribute="width" secondItem="6tf-w8-l50" secondAttribute="width" id="orP-6c-kby"/>
                             <constraint firstItem="oSC-Hy-NVN" firstAttribute="top" secondItem="6tf-w8-l50" secondAttribute="top" id="pYE-rX-zpS"/>
@@ -407,6 +413,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="NGH-4a-8bk" id="W5s-1D-M3S"/>
                         <outlet property="passTxt" destination="Gez-HL-rFS" id="Kty-Ve-TKo"/>
+                        <outlet property="spinner" destination="TlK-VT-R1U" id="jU5-Vg-dhT"/>
                         <outlet property="userImg" destination="6tf-w8-l50" id="S2O-D5-Wgr"/>
                         <outlet property="usernameTxt" destination="Gqm-s5-cW0" id="hOh-f7-N2V"/>
                         <segue destination="cPf-DP-O7M" kind="unwind" identifier="unwindToChannel" unwindAction="perpareForUnwindWithSegue:" id="tcC-0P-U3y"/>
@@ -479,6 +486,9 @@
                                             <constraint firstItem="6VQ-r8-Kvq" firstAttribute="top" secondItem="bjj-wj-DXC" secondAttribute="top" constant="10" id="JLd-ib-bw0"/>
                                             <constraint firstItem="6VQ-r8-Kvq" firstAttribute="leading" secondItem="bjj-wj-DXC" secondAttribute="leading" constant="10" id="Zil-5W-J8G"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="avatarImg" destination="6VQ-r8-Kvq" id="RZV-ns-Ez1"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
