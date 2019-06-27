@@ -20,6 +20,7 @@ typealias CompletionHandler = (_ Success : Bool) -> () 	//typealias it's to chan
 let TO_LOGIN = "toLogin"
 let  TO_CREATE_ACOUNT = "toCreateAcount"
 let UNWIND = "unwindToChannel"
+let TO_AVATAR_PICKER = "toAvatarPicker"
 
 // User Defaults
 let TOKEN_KEY = "token"
@@ -38,3 +39,7 @@ let URL_USER_ADD = "\(BASE_URL)user/add"
 let HEADER = [
     "Content-Type" : "application/json; charset = utf-8"
 ]
+
+// Cells
+let AVATAR_CELL = "avatarCell"
+
