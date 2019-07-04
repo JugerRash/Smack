@@ -119,7 +119,7 @@ class AuthService {
             "name" : name,
             "email" : lowerCaseEmail ,
             "avatarName" : avatarName ,
-            "avataColor" : avatarColor
+            "avatarColor" : avatarColor
         ]
         
         let header = [

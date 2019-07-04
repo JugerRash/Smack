@@ -96,7 +96,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-4a-YHQ">
-                                <rect key="frame" x="281" y="77" width="22" height="22"/>
+                                <rect key="frame" x="287" y="77" width="16" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
                         </subviews>
@@ -119,6 +119,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="NZu-7V-DQF" id="jRw-TY-qdf"/>
+                        <outlet property="userImg" destination="2r9-BW-43F" id="KbU-4T-nlk"/>
                         <segue destination="cQU-Xv-ITv" kind="show" identifier="toLogin" id="hgt-6n-rWL"/>
                     </connections>
                 </viewController>
@@ -285,7 +286,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="bAn-L0-WYr"/>
                                     <action selector="signupBtnPressed:" destination="KAQ-2F-GHM" eventType="touchUpInside" id="rd2-iS-mHQ"/>
                                 </connections>
                             </button>
@@ -333,7 +333,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqo-aZ-MpE">
                                         <rect key="frame" x="0.0" y="133" width="250" height="2"/>
@@ -369,7 +369,6 @@
                                 </state>
                                 <connections>
                                     <action selector="pickAvatarPressed:" destination="KAQ-2F-GHM" eventType="touchUpInside" id="JS0-nM-Hc6"/>
-                                    <action selector="signupBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="hH5-OB-lxU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8J-XX-3aF">
@@ -380,7 +379,6 @@
                                 </state>
                                 <connections>
                                     <action selector="pickBGColorPressed:" destination="KAQ-2F-GHM" eventType="touchUpInside" id="MUi-8X-UPC"/>
-                                    <action selector="signupBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="vmC-Kh-fSl"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TlK-VT-R1U">
