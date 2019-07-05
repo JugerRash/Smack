@@ -96,7 +96,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-4a-YHQ">
-                                <rect key="frame" x="287" y="77" width="16" height="22"/>
+                                <rect key="frame" x="281" y="77" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
                             </button>
                         </subviews>
@@ -232,21 +232,30 @@
                                     <action selector="signupBtnPressed:" destination="cQU-Xv-ITv" eventType="touchUpInside" id="hz6-YM-lDi"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WDX-Vk-umj">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gol-kD-Utu" firstAttribute="centerX" secondItem="ij4-H4-t0L" secondAttribute="centerX" id="33Y-Dh-7Tq"/>
                             <constraint firstItem="Bga-zp-YRT" firstAttribute="centerX" secondItem="ij4-H4-t0L" secondAttribute="centerX" id="4RP-qr-4nU"/>
+                            <constraint firstItem="WDX-Vk-umj" firstAttribute="centerY" secondItem="ij4-H4-t0L" secondAttribute="centerY" constant="-100" id="5dZ-Nj-tBB"/>
                             <constraint firstItem="QcW-NX-9pX" firstAttribute="top" secondItem="iex-Ra-Czu" secondAttribute="bottom" constant="40" id="L6d-f4-JHW"/>
                             <constraint firstItem="QcW-NX-9pX" firstAttribute="centerX" secondItem="ij4-H4-t0L" secondAttribute="centerX" id="WRj-2V-lSn"/>
                             <constraint firstItem="gol-kD-Utu" firstAttribute="top" secondItem="Bga-zp-YRT" secondAttribute="bottom" id="WqY-wO-Zqt"/>
                             <constraint firstItem="Bga-zp-YRT" firstAttribute="top" secondItem="QcW-NX-9pX" secondAttribute="bottom" constant="40" id="ZGB-51-W1c"/>
                             <constraint firstItem="iex-Ra-Czu" firstAttribute="top" secondItem="2dC-sP-lA7" secondAttribute="top" constant="68" id="a3g-W7-rZ9"/>
                             <constraint firstItem="iex-Ra-Czu" firstAttribute="centerX" secondItem="ij4-H4-t0L" secondAttribute="centerX" id="fu6-Oe-skP"/>
+                            <constraint firstItem="WDX-Vk-umj" firstAttribute="centerX" secondItem="ij4-H4-t0L" secondAttribute="centerX" id="pu5-gR-JT4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2dC-sP-lA7"/>
                     </view>
                     <connections>
+                        <outlet property="emailTxt" destination="F65-cW-zd7" id="VZZ-9b-hYs"/>
+                        <outlet property="passwordTxt" destination="TFd-fo-qsX" id="o3r-3Q-b8T"/>
+                        <outlet property="spinner" destination="WDX-Vk-umj" id="rW3-Oh-7xh"/>
                         <segue destination="KAQ-2F-GHM" kind="show" identifier="toCreateAcount" id="5I4-7M-nLM"/>
                     </connections>
                 </viewController>

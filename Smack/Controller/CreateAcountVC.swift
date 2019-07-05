@@ -95,8 +95,8 @@ class CreateAcountVC: UIViewController {
         spinner.isHidden = true
         
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: SMACK_PURPLE_BACKGROUND ])
-         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: SMACK_PURPLE_BACKGROUND ])
-         passTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: SMACK_PURPLE_BACKGROUND ])
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: SMACK_PURPLE_BACKGROUND ])
+        passTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: SMACK_PURPLE_BACKGROUND ])
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAcountVC.handleTap))
         view.addGestureRecognizer(tap)

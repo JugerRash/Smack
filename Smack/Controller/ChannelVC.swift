@@ -22,6 +22,10 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIFI_USER_DATA_DID_CHANGE, object: nil)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setUserDataInfo()
+    }
 
     //Actions -:
     @IBAction func perpareForUnwind(segue : UIStoryboardSegue) { }
@@ -42,10 +46,14 @@ class ChannelVC: UIViewController {
     
     // Functions -:
     @objc func userDataDidChange(_ notif : Notification){
+        setUserDataInfo()
+    }
+    
+    func setUserDataInfo(){
         if AuthService.instance.isLoggedIn {
             print("In Log in ")
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
-            userImg.image = UIImage(named: UserDataService.instance.avatarName)	
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
             print(UserDataService.instance.avatarColor)
             userImg.backgroundColor = UserDataService.instance.returnUIColor(compononts: UserDataService.instance.avatarColor)
         }else {
@@ -53,7 +61,6 @@ class ChannelVC: UIViewController {
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
         }
-        
         
     }
     
