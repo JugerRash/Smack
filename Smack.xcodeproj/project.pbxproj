@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F27CD259FC7F89ABAEFB079 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69F584C3213F180B4BDCC34 /* Pods_Smack.framework */; };
+		800FE25E22D4867200E51865 /* AddChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE25C22D4867200E51865 /* AddChannelVC.swift */; };
+		800FE25F22D4867200E51865 /* AddChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800FE25D22D4867200E51865 /* AddChannelVC.xib */; };
+		800FE26122D496C600E51865 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE26022D496C600E51865 /* SocketService.swift */; };
 		8014534D22CE0DF600EEDD0C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014534B22CE0DF600EEDD0C /* ProfileVC.swift */; };
 		8014534E22CE0DF600EEDD0C /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8014534C22CE0DF600EEDD0C /* ProfileVC.xib */; };
 		8020B42E22C3505F009E9CF1 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8020B42D22C3505F009E9CF1 /* RoundedButton.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		800FE25C22D4867200E51865 /* AddChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelVC.swift; sourceTree = "<group>"; };
+		800FE25D22D4867200E51865 /* AddChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelVC.xib; sourceTree = "<group>"; };
+		800FE26022D496C600E51865 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		8014534B22CE0DF600EEDD0C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8014534C22CE0DF600EEDD0C /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileVC.xib; path = ../Controller/ProfileVC.xib; sourceTree = "<group>"; };
 		8020B42D22C3505F009E9CF1 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 		8014534A22CE0A5800EEDD0C /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				800FE25D22D4867200E51865 /* AddChannelVC.xib */,
 				8014534C22CE0DF600EEDD0C /* ProfileVC.xib */,
 			);
 			path = XIBs;
@@ -107,6 +114,7 @@
 				8029F4BB22C23DC70086E0D2 /* AuthService.swift */,
 				8020B42F22C37260009E9CF1 /* UserDataService.swift */,
 				8081F27622D0B09A0014C4D7 /* MessageService.swift */,
+				800FE26022D496C600E51865 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,6 +173,7 @@
 				807AC4FB22BCD361008EEB30 /* CreateAcountVC.swift */,
 				8078875022C396F400F2CF09 /* AvatarPickerVC.swift */,
 				8014534B22CE0DF600EEDD0C /* ProfileVC.swift */,
+				800FE25C22D4867200E51865 /* AddChannelVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800FE25F22D4867200E51865 /* AddChannelVC.xib in Resources */,
 				8014534E22CE0DF600EEDD0C /* ProfileVC.xib in Resources */,
 				803FA71322BA2F9D00026D80 /* LaunchScreen.storyboard in Resources */,
 				803FA71022BA2F9D00026D80 /* Assets.xcassets in Resources */,
@@ -320,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				800FE26122D496C600E51865 /* SocketService.swift in Sources */,
 				8014534D22CE0DF600EEDD0C /* ProfileVC.swift in Sources */,
 				8026DD4822D37A1900F08E83 /* ChannelCell.swift in Sources */,
 				80F222D122BB7ABB007713FE /* ChannelVC.swift in Sources */,
@@ -333,6 +344,7 @@
 				807AC4FA22BCC0CF008EEB30 /* LoginVC.swift in Sources */,
 				8029F4BC22C23DC70086E0D2 /* AuthService.swift in Sources */,
 				80F222E022BB8EE1007713FE /* GradientView.swift in Sources */,
+				800FE25E22D4867200E51865 /* AddChannelVC.swift in Sources */,
 				803FA70922BA2F8600026D80 /* AppDelegate.swift in Sources */,
 				8078875322C3994D00F2CF09 /* AvatarCell.swift in Sources */,
 				80F222DE22BB8373007713FE /* SWRevealViewController.m in Sources */,

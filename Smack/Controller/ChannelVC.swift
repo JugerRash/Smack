@@ -25,6 +25,12 @@ class ChannelVC: UIViewController {
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIFI_USER_DATA_DID_CHANGE, object: nil)
         
+        SocketService.instance.getChannels { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +41,12 @@ class ChannelVC: UIViewController {
     @IBAction func perpareForUnwind(segue : UIStoryboardSegue) { }
     
     
+    @IBAction func addChannelBtnPressed(_ sender: Any) {
+        let addChannel = AddChannelVC()
+        addChannel.modalPresentationStyle = .custom
+        present(addChannel, animated: true, completion: nil)
+        
+    }
     @IBAction func loginBtnPressed(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
             let profile = ProfileVC()
