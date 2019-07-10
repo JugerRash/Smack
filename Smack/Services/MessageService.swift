@@ -16,6 +16,8 @@ class MessageService {
     
     var channels = [Channel]()
     var newWayChannels = [newWayChannel]()
+    var selectedChannel : newWayChannel?
+    var messages = [Message]()
     
     func findAllChannels(completion : @escaping CompletionHandler) {
         
@@ -28,8 +30,8 @@ class MessageService {
                 } catch let error {
                     debugPrint(error as Any)
                 }
-
-                print(self.newWayChannels)
+                NotificationCenter.default.post(name: NOTIFI_CHANNEL_LOADED, object: nil)
+                
                 ///************************************************************************///
 //                this is the old way
 //                if let json = JSON(data).array {
@@ -52,5 +54,45 @@ class MessageService {
         }
         
     }
+    func findAllMessagesForChannel(channelId : String , completion : @escaping CompletionHandler){
+        
+        Alamofire.request("\(URL_GET_MESSAGES)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                self.clearMessages()
+                guard let data = response.data else { return }
+                if let json = JSON(data).array {
+                    for item in json {
+                        let messageBody = item["messageBody"].stringValue
+                        let userName = item["userName"].stringValue
+                        let channelId = item["channelId"].stringValue
+                        let userAvatar = item["userAvatar"].stringValue
+                        let userAvatarColor = item["userAvatarColor"].stringValue
+                        let id = item["_id"].stringValue
+                        let timeStamp = item["timeStamp"].stringValue
+                        
+                        let message = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+                        self.messages.append(message)
+                        
+                    }
+                }
+                
+                completion(true)
+            }else{
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
+    
+    
+    func clearMessages(){
+        messages.removeAll()
+    }
+    
+    func clearChannels(){
+        newWayChannels.removeAll()
+    }
+    
     
 }

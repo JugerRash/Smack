@@ -24,6 +24,7 @@ class ChannelVC: UIViewController {
 
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.width - 60
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIFI_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.channelsLoaded(_:)), name: NOTIFI_CHANNEL_LOADED, object: nil)
         
         SocketService.instance.getChannels { (success) in
             if success {
@@ -42,9 +43,11 @@ class ChannelVC: UIViewController {
     
     
     @IBAction func addChannelBtnPressed(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
         let addChannel = AddChannelVC()
         addChannel.modalPresentationStyle = .custom
         present(addChannel, animated: true, completion: nil)
+        }
         
     }
     @IBAction func loginBtnPressed(_ sender: Any) {
@@ -65,6 +68,10 @@ class ChannelVC: UIViewController {
         setUserDataInfo()
     }
     
+    @objc func channelsLoaded(_ notif : Notification){
+        tableView.reloadData()
+    }
+    
     func setUserDataInfo(){
         if AuthService.instance.isLoggedIn {
             print("In Log in ")
@@ -76,6 +83,7 @@ class ChannelVC: UIViewController {
             loginBtn.setTitle("Login", for: .normal)
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
+            tableView.reloadData()	
         }
         
     }
@@ -99,6 +107,13 @@ extension ChannelVC : UITableViewDataSource , UITableViewDelegate {
         }else {
             return ChannelCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let channel = MessageService.instance.newWayChannels[indexPath.row]
+        MessageService.instance.selectedChannel = channel
+        NotificationCenter.default.post(name: NOTIFI_CHANNEL_SELECTED, object: nil)
+        self.revealViewController()?.revealToggle(animated: true)
     }
     
     

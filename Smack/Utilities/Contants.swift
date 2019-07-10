@@ -24,6 +24,8 @@ let TO_AVATAR_PICKER = "toAvatarPicker"
 
 //Notifications
 let NOTIFI_USER_DATA_DID_CHANGE = Notification.Name("User data changed")
+let NOTIFI_CHANNEL_LOADED = Notification.Name("Channels loaded")
+let NOTIFI_CHANNEL_SELECTED = Notification.Name("Channels selected")
 
 //Colors
 let SMACK_PURPLE_BACKGROUND = #colorLiteral(red: 0.3254901961, green: 0.4196078431, blue: 0.7764705882, alpha: 0.5)
@@ -41,7 +43,7 @@ let URL_LOGIN = "\(BASE_URL)account/login"
 let URL_USER_ADD = "\(BASE_URL)user/add"
 let URL_USER_BYEMAIL = "\(BASE_URL)user/byEmail/"
 let URL_FIND_ALL_CHANNELS = "\(BASE_URL)channel"
-
+let URL_GET_MESSAGES = "\(BASE_URL)message/byChannel"
 
 // Headers
 let HEADER = [
