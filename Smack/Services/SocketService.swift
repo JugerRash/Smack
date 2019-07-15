@@ -53,5 +53,42 @@ class SocketService: NSObject {
             completion(true)
         }
     }
+    
+    func addMessage(messageBody : String , userId : String , channelId : String , completion : @escaping CompletionHandler){
+        let user = UserDataService.instance
+        socket.emit("newMessage", "Hi World" , userId , channelId , user.name , user.avatarName , user.avatarColor)
+        completion(true)
+    }
+    
+    func getChatMessage(completion : @escaping (_ newMessage : Message) -> Void){
+        socket.on("messageCreated") { (arrayData, ack) in
+            guard let messageBody = arrayData[0] as? String else { return }
+            guard let channelId = arrayData[2] as? String else { return }
+            guard let userName = arrayData[3] as? String else { return }
+            guard let userAvatar = arrayData[4] as? String else { return }
+            guard let userAvatarColor = arrayData[5] as? String else { return }
+            guard let id = arrayData[6] as? String else { return }
+            guard let timeStamp = arrayData[7] as? String else { return }
+            
+            let newMessage = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+            
+            completion(newMessage)
+            
+//            if channelId == MessageService.instance.selectedChannel?._id && AuthService.instance.isLoggedIn {
+//                let newMessage = Message(message: messageBody, userName: userName, channelId: channelId, userAvatar: userAvatar, userAvatarColor: userAvatarColor, id: id, timeStamp: timeStamp)
+//                MessageService.instance.messages.append(newMessage)
+//                completion(true)
+//            }else {
+//                completion(false)
+//            }
+        }
+    }
+    
+    func getTypingUsers(completionHandler : @escaping (_ typingUsers : [String : String]) -> Void){
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String : String] else { return }
+            completionHandler(typingUsers)
+        }
+    }
 
 }
